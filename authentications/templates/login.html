@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+ {% load static %}
+    <section class="section forms">
+        <figure class="form-side-img">
+            <img src="{% static 'images/undraw_code_thinking_re_gka2.svg' %}">
+        </figure>
+        <form action="" method="post" class="user-form">
+            {% csrf_token %}
+            <figure class="form-img">
+                <img src="{% static 'images/bxs-user-check.svg' %}">
+            </figure>
+            <input class="user-input" type="text" name="username" placeholder="username" required>
+            <input class="user-input" type="password" name="password" placeholder="@Mx13!_s" required>
+            <div class="user-options">
+                <label for="">
+                    <input type="checkbox" name="remember" id=""> Remember Me
+                </label>
+                <a href="#">Forgot your Password?</a>
+            </div>
+            <input class="btn submit-btn" type="submit" value="Submit">
+            <div class="user-options">
+                <p>Don't have an account yet?</p>
+                <a class="create-account" href="#">Create here!</a>
+            </div>
+        </form>
+
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,500&family=Poppins:ital,wght@0,200;0,500;0,600;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,400;1,700&display=swap');
+
+
+:root {
+    --blue-primary: rgb(86, 90, 144);
+    --blue-secondary: rgb(91, 80, 214);
+    --black-primary: rgb(33, 35, 70);
+    --white-lighter: #fbfcfd;
+    --gray-lighter: #e2e7f3;
+    --box-shadow:  0 8px 16px rgba(0,0,0,.08);
+    --border-radius: 12px;
+
+    font-size: 16px;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    position: relative;
+}
+
+
+body {
+    min-height: 100vh;
+    background: var(--white-lighter);
+    font-family: 'Roboto', 'sans-serif';
+    color: var(--blue-primary);
+}
+
+p, a {
+    line-height: 1.4rem;
+    font-size: 1rem;
+    color: var(--blue-primary);
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: Poppins, sans-serif;
+    letter-spacing: .1rem;
+}
+h1 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    margin:2rem 0;
+    letter-spacing: .05rem;
+}
+h2 {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.size-controler {
+    width: 90%;
+    margin: auto;
+    max-width: 1400px;
+    @media screen and (min-width: 768px) {
+        width: 100%;
+    }
+}
+
+.btn {
+    padding: .5rem 1rem;
+    border: 1px solid var(--white-lighter);
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.main-header {
+    display: flex;
+    min-height: 84px;
+    padding: 1px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    background-color: var(--blue-secondary);
+
+    .toggle {
+        display: none;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            color: var(--white-lighter);
+            font-weight: 500;
+            font-size: 1.4rem;
+            font-style: italic
+        }
+
+        .main-menu, .user-menu {
+            @extend .main-nav;
+            width: auto;
+
+            a {
+                margin-left: 1.5rem;
+                color: var(--white-lighter);
+            }
+            .sign-up {
+                background-color: var(--white-lighter);
+                color: var(--black-primary);
+            }
+        }
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.main-container {
+    .content-wrap {
+        display: grid;
+        max-width: 900px;
+        margin: auto;
+        gap: 40px;
+        padding: 2rem 0;
+    
+
+    .card-section {
+        .section-header {
+            max-width: 600px;
+            margin-right: auto;
+        }
+        .inner-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+    
+            .wrapper {
+                margin: 2rem auto;
+            }
+
+            .card {
+                width: 100%;
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                padding: 1rem;
+                overflow-y: hidden;
+                max-width: 320px;
+                
+    
+                .card-img-frame {
+                    max-width: 320px;
+                    object-fit: contain;
+                    margin: auto auto 2rem;
+                }
+                h3 {
+                    margin: 1.2rem 0;
+                }
+                .card-on-hover {
+                    height: 0;
+                    position: absolute;
+                    left: 0;
+                    overflow-y: hidden;
+                    transition: all .6s ease;
+                    padding: 0 2rem;
+                    bottom: 0;
+                    a {
+                        margin: 1rem auto;
+                        background-color: var(--white-lighter);
+                        color: var(--black-primary);
+                    }
+                    
+                }
+    
+                &:hover {
+                    .card-on-hover {
+                        padding: 2rem;
+                        height: 100%;
+                        background-color: var(--black-primary);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 2rem;
+                        p {
+                            color: var(--white-lighter);
+                        }
+                    }
+                }
+    
+            }
+        }
+        }
+    }
+    .section {
+        margin-bottom: 2.5rem;
+    }
+
+    .course-ditails {
+        @extend .content-wrap;
+        grid-template-columns: 1fr minmax(240px, 400px) ;
+        max-width: 1400px;
+
+    }
+
+
+    .forms {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        box-shadow: var(--box-shadow);
+        margin: auto;
+        padding: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+        max-width: 800px;
+        
+        .form-side-img {
+            display: flex;
+            padding: 20%;
+            img {
+                width: 100%;
+            }
+        }
+
+        .user-form {
+            background-color: var(--white-lighter);
+            display: flex;
+            flex-direction: column;
+
+            .form-img {
+                width: 80px;
+                height: 80px;
+                margin: 1rem auto 2rem;
+            }
+
+            .user-input {
+                width: 100%;
+                padding: 1rem .5rem;
+                margin: .5rem 0;
+                font-size: 1rem;
+                border: 1px solid var(--blue-primary);
+                box-shadow: var(--box-shadow);
+                border-radius: 4px;
+            }
+
+            .user-options {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 1.4rem 0;
+                font-size: .875rem;
+                p, a {
+                    font-size: .875rem;
+                }
+                label {
+                    input {
+                        margin-right: .5rem;
+                    }
+                    font-weight: 400;
+                }
+            }
+
+            .submit-btn {
+                padding: 1.2rem;
+                background-color: var(--blue-secondary);
+                border-radius: 4px;
+                color: var(--white-lighter);
+                font-weight: 700;
+                cursor: pointer;
+            }
+            .create-account {
+                font-weight: 500;
+            }
+
+        }
+    }
+
+}
+
+
+

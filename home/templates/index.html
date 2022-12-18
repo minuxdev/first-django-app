@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    
+{% load static %}
+
+<div class="content-wrap">
+    <!-- DISPLAY CARDS -->
+    <div>
+        <section class="section card-wrapper  card-section">
+            <div class="wrapper">
+                <div class="section-header">
+                    <h1>Learn how to code with our latest courses</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nulla maiores sequi nam illum obcaecati placeat, tempore a corporis quasi esse aliquam fugit sed iste.</p>
+                </div>
+                
+                <div class="inner-wrapper">
+                    {% for user in users %}
+                        <div class="card">
+                            <figure class="card-img-frame">
+                                <img src="{% static 'images/undraw_annotation_re_h774.svg' %}">
+                            </figure>
+                            <h3>{{user.username}}</h3>
+                            <div class="card-on-hover">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Ad unde molestias accusantium? Ab vitae expedita iure placeat, 
+                                eaque quod consequuntur dolore accusantium obcaecati illo alias.</p>
+                                <a href="#" class="btn sign-up">Start Now</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>        
+        </section>
+    </div>
+
+    <!-- DISPLAY FORMS -->
+
+
+    <!-- <nav class="side-menu">
+        <ul>
+            <li><a href="#">Topic</a></li>
+            <li><a href="#">Topic</a></li>
+            <li><a href="#">Topic</a></li>
+            <li><a href="#">Topic</a></li>
+            <li><a href="#">Topic</a></li>
+        </ul>
+    </nav> -->
+
+</div>
+
+
+{% endblock content %}
+    
+

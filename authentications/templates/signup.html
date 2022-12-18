@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% load static %}
+    <section class="section forms">
+        <figure class="form-side-img">
+            <img src="{% static 'images/undraw_code_thinking_re_gka2.svg' %}">
+        </figure>
+        <form action="" method="post" class="user-form">
+            {% csrf_token %}
+            <figure class="form-img">
+                <img src="{% static 'images/bxs-user-check.svg' %}">
+            </figure>
+            <input class="user-input" type="text" name="username" placeholder="username" required>
+            <input class="user-input" type="email" name="email" placeholder="contact@leeva.com" required>
+            <input class="user-input" type="password" name="password" placeholder="@Mx13!_s" required>
+            <input class="user-input" type="password" name="check_password" placeholder="@Mx13!_s" required>
+            <input class="btn submit-btn" type="submit" value="Submit">
+            <div class="user-options">
+                <p>Alredy have an account?</p>
+                <a class="create-account" href="#">Login here!</a>
+            </div>
+        </form>
+
+    </section>
+
+{% endblock content %}

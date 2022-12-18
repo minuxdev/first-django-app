@@ -1,0 +1,64 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    
+    <header class="main-header">
+        <nav class="main-nav size-controler">
+            
+            <a href="{% url 'home:index' %}" class="logo">leeva.inc</a>
+            <ul class="main-menu">
+                <li><a href="#">How to</a></li>
+                <li><a href="#">Free Courses</a></li>
+            </ul>
+            <ul class="user-menu">
+                <li><a class="btn login" href="{% url 'auth:login' %}">Log in</a></li>
+                <li><a class="btn sign-up" href="{% url 'auth:signup' %}">Sign up</a></li>
+            </ul>
+            <div class="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+
+<div class="main-container">
+
+
+
+    <div class="size-controler">
+
+        {% block content %}
+          
+        {% endblock content %}
+
+
+        
+
+    </div>
+
+  
+    
+</div>
+
+<!-- <figure class="card-img">
+    <img src="../images/undraw_freelancer_re_irh4.svg" alt="" srcset="">
+</figure> -->
+
+<!-- FOOTER -->
+
+
+
+</body>
+</html>
